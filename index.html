@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ============================================================
+    IPE PORTFOLIO — index.html
+    ✏️  EDIT THIS FILE to change any text, links, or content.
+    🎨  Edit style.css  to change colors, fonts, or layout.
+    ⚙️  Edit script.js  to change interactive behaviour.
+    ============================================================ -->
+
+  <!-- ✏️ Change the page title here -->
+  <title>Nafiun Hasan | Industrial &amp; Production Engineering Scholar</title>
+
+  <!-- Tailwind CDN (for layout utilities only) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface":                   "#f8faf7",
+            "surface-container-low":     "#f2f4f1",
+            "surface-container":         "#eceeeb",
+            "surface-container-high":    "#e7e9e6",
+            "surface-container-highest": "#e1e3e0",
+            "surface-container-lowest":  "#ffffff",
+            "on-surface":                "#191c1b",
+            "on-surface-variant":        "#404945",
+            "primary":                   "#006d36",
+            "primary-container":         "#7af19c",
+            "on-primary":                "#ffffff",
+            "secondary-container":       "#cce5da",
+            "outline-variant":           "#bfc9c3",
+            "outline":                   "#707974",
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+
+  <!-- Your stylesheet — edit style.css for all visual changes -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ================================================================
+  🔧 NAVIGATION
+  Edit: logo name, nav link labels, CV download href
+================================================================ -->
+<nav id="main-nav">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2" style="text-decoration:none;">
+      <span style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#006d36,#66dd8b);display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="font-size:18px;color:#fff;">precision_manufacturing</span>
+      </span>
+      <!-- ✏️ Your name / brand -->
+      <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:1rem;color:#191c1b;letter-spacing:-0.02em;">NAFIUN HASAN</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#research"  class="nav-link">Research</a>
+      <a href="#projects"  class="nav-link">Projects</a>
+      <a href="#contact"   class="nav-link">Contact</a>
+      <!-- ✏️ Replace # with your CV file, e.g. "assets/your-cv.pdf" -->
+      <a href="#" class="btn-primary" style="padding:10px 22px;font-size:0.82rem;">
+        <span class="material-symbols-outlined" style="font-size:16px;">download</span>
+        Download CV
+      </a>
+    </div>
+
+    <!-- Hamburger (mobile only) -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+      <span class="ham-line" id="h1"></span>
+      <span class="ham-line" id="h2"></span>
+      <span class="ham-line" id="h3"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile dropdown menu -->
+<div id="mobile-menu">
+  <a href="#education" class="nav-link text-lg py-1" onclick="closeMobile()">Education</a>
+  <a href="#research"  class="nav-link text-lg py-1" onclick="closeMobile()">Research</a>
+  <a href="#projects"  class="nav-link text-lg py-1" onclick="closeMobile()">Projects</a>
+  <a href="#contact"   class="nav-link text-lg py-1" onclick="closeMobile()">Contact</a>
+  <a href="#" class="btn-primary mt-2" style="justify-content:center;">
+    <span class="material-symbols-outlined" style="font-size:17px;">download</span>
+    Download CV
+  </a>
+</div>
+
+
+<main style="padding-top:80px;">
+
+<!-- ================================================================
+  🔧 HERO SECTION
+  Edit: discipline label, headline, bio, button labels, stats,
+        floating badge text, and your avatar photo
+================================================================ -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-32">
+  <div class="flex flex-col md:flex-row items-center gap-16 md:gap-20">
+
+    <!-- ── Left: Copy ── -->
+    <div class="flex-1 reveal">
+
+      <!-- ✏️ Animated hero label -->
+      <div id="hero-animated-label" class="hero-animated-label mb-5" aria-live="polite"></div>
+
+      <!-- ✏️ Main headline — wrap any word in <span style="color:#006d36;"> to highlight it -->
+      <h1 style="font-size:clamp(2.6rem,6vw,4.5rem);font-weight:800;line-height:1.08;letter-spacing:-0.025em;color:#191c1b;margin-bottom:1.5rem;">
+        Optimizing the<br>
+        <span style="color:#006d36;">Systems</span> that<br>
+        Build the Future.
+      </h1>
+
+      <!-- ✏️ Bio text -->
+      <p style="font-size:1.05rem;line-height:1.75;color:#404945;max-width:480px;margin-bottom:2.25rem;">
+        I am an IPE student dedicated to bridging the gap between theoretical
+        engineering and operational excellence. My focus lies in systemic
+        efficiency, manufacturing innovation, and data-driven decision-making. Passionate about manufacturing innovation, AI-powered solutions, process optimization, and solving real-world industrial challenges
+      </p>
+
+      <!-- ✏️ CTA button labels -->
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact"  class="btn-ghost">Get In Touch</a>
+      </div>
+
+      <!-- ✏️ Stats — change the numbers and labels -->
+      <div class="flex gap-8 mt-14 pt-10" style="border-top:1px solid rgba(191,201,195,0.3);">
+        <div>
+          <div class="stat-number">Available to Collaborate</div>
+      
+        </div>
+        <div>
+          <div class="stat-number">6+</div>
+          <div style="font-size:1.4rem;color:#707974;margin-top:4px;">Projects Done</div>
+        </div>
+        <div>
+          <div class="stat-number">4</div>
+          <div style="font-size:1.4rem;color:#707974;margin-top:4px;">Research Areas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right: Avatar ── -->
+    <div class="flex-1 relative flex justify-center reveal reveal-delay-2">
+      <!-- Background glow blob (decorative) -->
+      <div style="position:absolute;width:380px;height:380px;border-radius:50%;
+                  background:radial-gradient(circle,rgba(122,241,156,0.22) 0%,transparent 70%);
+                  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+
+      <div style="position:relative;max-width:360px;width:100%;">
+        <div class="avatar-ring" style="aspect-ratio:1/1;">
+
+          <img src="assets/dp.JPG" alt="Nafiun Hasan"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          
+        </div>
+
+        <!-- ✏️ Floating badge text -->
+        <div class="floating-badge" style="bottom:-12px;left:-20px;">
+          <span style="color:#006d36;margin-right:6px;">●</span>
+          Tech Enthusiasts 
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+  🔧 EDUCATION SECTION
+  Edit: section label, section title, timeline items
+  To add more items: copy one timeline-item block and paste below
+================================================================ -->
+<section id="education" style="background:#f2f4f1;padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
+
+      <!-- Section heading column -->
+      <div class="md:w-72 reveal">
+        <!-- ✏️ Small label -->
+        <span class="section-label mb-3 block">Background</span>
+        <!-- ✏️ Section title -->
+        <h2 style="font-size:2.5rem;font-weight:800;letter-spacing:-0.025em;line-height:1.1;">Academic Foundation</h2>
+      </div>
+
+      <!-- Timeline column -->
+      <div class="flex-1 space-y-10">
+
+        <!-- ── Education Item 1 ── -->
+        <div class="timeline-item reveal reveal-delay-1" style="padding-bottom:2rem;">
+          <!-- ✏️ Date range -->
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#006d36;margin-bottom:8px;">2022 — Present</div>
+          <!-- ✏️ Degree / award title -->
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:6px;">B.Sc. in Industrial &amp; Production Engineering</h3>
+          <!-- ✏️ Institution -->
+          <div style="font-size:0.88rem;color:#707974;margin-bottom:10px;">Bangladesh University of Engineering and Technology</div>
+          <!-- ✏️ Description -->
+          <p style="color:#404945;line-height:1.7;font-size:0.95rem;max-width:560px;">
+            Focusing on Operations research, Ergonomics, Advanced manufacturing, Supply Chain, Quality Control, Operation Management, Optimization
+          <!--  Current GPA: 3.82/4.00.--> Active member of the Robotics Club.
+          </p>
+          <!-- ✏️ Chips — add or remove <span> tags as needed -->
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="chip">Operations Research</span>
+            <span class="chip">Manufacturing</span>
+            <span class="chip">AI ML</span>
+            <span class="chip">Data Analysis</span>
+            <span class="chip">Supply Chain</span>
+            <span class="chip">Simulation</span>
+          </div>
+        </div>
+
+        <!-- ── Education Item 2 ── -->
+        <div class="timeline-item reveal reveal-delay-2">
+          <!-- ✏️ Date range -->
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#006d36;margin-bottom:8px;">2018 — 2020</div>
+          <!-- ✏️ Degree / award title -->
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:6px;">Higher Secondary School Certificate</h3>
+          <!-- ✏️ Institution -->
+          <div style="font-size:0.88rem;color:#707974;margin-bottom:10px;">Govt. Azizul Haque College</div>
+          <div style="font-size:0.88rem;color:#707974;margin-bottom:10px;">GPA 5.00/5.00</div>
+          <!-- ✏️ Description -->
+          <p style="color:#404945;line-height:1.7;font-size:0.95rem;max-width:560px;">
+            Awarded for outstanding performance in Mathematics and Physics.
+            Led the Robotics and Innovation Club to a regional championship.
+          </p>
+        </div>
+
+        <!-- ── Add more items: copy a timeline-item block here ── -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  🔧 RESEARCH SECTION
+  Edit: section label, section title, card titles, descriptions,
+        chip labels, and icon names (see fonts.google.com/icons)
+================================================================ -->
+<section id="research" style="padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="text-center mb-16 reveal">
+      <!-- ✏️ Small label -->
+      <span class="section-label mb-3 block">Focus Areas</span>
+      <!-- ✏️ Section title -->
+      <h2 style="font-size:2.75rem;font-weight:800;letter-spacing:-0.025em;">Core Research Areas</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- ── Card 1: White ── -->
+      <div class="research-card reveal reveal-delay-1">
+        <!-- ✏️ Icon name from fonts.google.com/icons -->
+        <span class="material-symbols-outlined" style="font-size:2.25rem;color:#006d36;margin-bottom:1.25rem;display:block;">factory</span>
+        <!-- ✏️ Card title -->
+        <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">ML in Manufacturing</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.95rem;margin-bottom:1.25rem;">
+          Author of "Unsupervised Anomaly Detection in CNC Milling Processes using Frequency-Domain Feature Extraction and One-Class SVM", Proceedings of the International Conference on Industrial Engineering and Operations Management, 2026.
+        </p>
+        <!-- ✏️ Tags -->
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Anomaly detection</span>
+          <span class="chip">Predictive maintenance</span>
+          <span class="chip">Unsupervised ML</span>
+          <span class="chip">CNC machines</span>
+        </div>
+      </div>
+
+      <!-- ── Card 2: Featured (dark green bg) ── -->
+      <div class="research-card featured reveal reveal-delay-2">
+        <span class="material-symbols-outlined" style="font-size:2.25rem;color:rgba(255,255,255,0.9);margin-bottom:1.25rem;display:block;">local_shipping</span>
+        <!-- ✏️ Card title -->
+        <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;color:#fff;">Supply Chain Automation</h3>
+        <!-- ✏️ Description -->
+        <p style="color:rgba(255,255,255,0.78);line-height:1.7;font-size:0.95rem;margin-bottom:1.25rem;">
+          Currently developing a model to reduce global supply chain cost and bullwhip effect using multi-level agentic LLMs.
+        </p>
+        <!-- ✏️ Tags (use chip-white class on dark card) -->
+        <div class="flex flex-wrap gap-2">
+          <span class="chip chip-white">AI Agents</span>
+          <span class="chip chip-white">LLMs</span>
+          <span class="chip chip-white">Supply Chain</span>
+          <span class="chip chip-white">Bullwhip Effect</span>
+        </div>
+      </div>
+
+      <!-- ── Card 3: White ── -->
+      <div class="research-card reveal reveal-delay-3">
+        <span class="material-symbols-outlined" style="font-size:2.25rem;color:#006d36;margin-bottom:1.25rem;display:block;">analytics</span>
+        <!-- ✏️ Card title -->
+        <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">Operations Research</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.95rem;margin-bottom:1.25rem;">
+          Applying linear programming and simulation to optimize resource allocation
+          in healthcare and manufacturing facilities.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Linear Programming</span>
+          <span class="chip">Arena Sim</span>
+        </div>
+      </div>
+
+      <!-- ── Card 4: Teal (wide) ── -->
+      <div class="research-card teal reveal reveal-delay-4">
+        <div class="flex items-center gap-8">
+          <div class="flex-1">
+            <span class="material-symbols-outlined" style="font-size:2.25rem;color:#006d36;margin-bottom:1.25rem;display:block;">accessibility_new</span>
+            <!-- ✏️ Card title -->
+            <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;color:#191c1b;">Human Factors &amp; Ergonomics</h3>
+            <!-- ✏️ Description -->
+            <p style="color:#404945;line-height:1.7;font-size:0.95rem;margin-bottom:1.25rem;">
+              Design optimization of workstation layouts to improve worker productivity
+              and reduce musculoskeletal disorders in heavy industry.
+            </p>
+            <!-- ✏️ Tags (use chip-teal on this card) -->
+            <div class="flex flex-wrap gap-2">
+              <span class="chip chip-teal">Ergonomics</span>
+              <span class="chip chip-teal">Workstation Design</span>
+            </div>
+          </div>
+          <div class="hidden md:flex w-24 h-24 rounded-full items-center justify-center"
+               style="background:rgba(255,255,255,0.5);">
+            <span class="material-symbols-outlined" style="font-size:2.5rem;color:#006d36;">self_improvement</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  🔧 PROJECTS SECTION
+  Edit: section label, titles, descriptions, image src URLs, tags
+  To replace an image: change src="..." to your local file or URL
+  To add a project: copy one project-card block and paste after
+================================================================ -->
+<section id="projects" style="background:#f2f4f1;padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="flex justify-between items-end mb-16 reveal">
+      <div>
+        <!-- ✏️ Small label -->
+        <span class="section-label mb-2 block">Case Studies</span>
+        <!-- ✏️ Section title -->
+        <h2 style="font-size:2.75rem;font-weight:800;letter-spacing:-0.025em;">Projects</h2>
+        <!-- ✏️ Subtitle -->
+        <p style="color:#707974;margin-top:0.5rem;font-size:0.95rem;">Collection of my academic and professional projects.</p>
+      </div>
+      <!-- ✏️ "View Archive" link href -->
+      <a href="#" style="font-family:'Manrope',sans-serif;font-weight:700;color:#006d36;font-size:0.9rem;
+                         display:flex;align-items:center;gap:6px;text-decoration:none;">
+        View Archive
+        <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- ── Project 1 ── -->
+      <div class="project-card reveal reveal-delay-1" data-project="project-1">
+        <div class="project-img" style="aspect-ratio:16/10;background:#e7e9e6;margin-bottom:1.5rem;">
+          <!-- ✏️ Image: replace src with your own file, e.g. "assets/project1.jpg" -->
+          <img src="assets/swift_cleaner.jpg"
+               alt="Automated Cleaning Device" loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+        <!-- ✏️ Project title -->
+        <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;">Swift Cleaner: All in One Cleaning Tool</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.93rem;margin-bottom:1rem;">
+          “Swift Cleaner” is a cleaning device designed to efficiently clean floors while minimizing environmental impact. This machine uses sustainable materials, low-energy consumption and eco-friendly cleaning solutions. It could offer services like deep cleaning, carpet cleaning and other maintenance tasks for residential or commercial properties.
+        </p>
+        <!-- ✏️ Tech tags -->
+        <div class="flex flex-wrap gap-3">
+          <span class="proj-tag">SolidWorks</span>
+          <span class="proj-tag">Manufacturing</span>
+          <span class="proj-tag">Product Design</span>
+        </div>
+      </div>
+
+      <!-- ── Project 2 (offset) ── -->
+      <div class="project-card reveal reveal-delay-2" data-project="project-2" style="margin-top:3rem;">
+        <div class="project-img" style="aspect-ratio:16/10;background:#e7e9e6;margin-bottom:1.5rem;">
+          <!-- ✏️ Image src -->
+          <img src="assets/IoT.jpg"
+               alt="IoT Project="lazy"
+               style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);"/>
+        </div>
+        <!-- ✏️ Project title -->
+        <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;">Real Time Vibration and Temperature Monitoring system for Predictive Maintenance </h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.93rem;margin-bottom:1rem;">
+          The system is designed to detect abnormal vibration and
+overheating in rotating machinery. When such conditions
+are detected, it automatically triggers alerts and performs
+a machine shutdown to prevent damage. The solution is
+intended to support predictive maintenance, and may be
+integrated with Machine Learning models for future
+pattern recognition and fault prediction.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="proj-tag">IoT</span>
+          <span class="proj-tag">Esp 32</span>
+          <span class="proj-tag">Process Design</span>
+        </div>
+      </div>
+
+      <!-- ── Project 3 ── -->
+      <div class="project-card reveal reveal-delay-1" data-project="project-3">
+        <div class="project-img" style="aspect-ratio:16/10;background:#e7e9e6;margin-bottom:1.5rem;">
+          <!-- ✏️ Image src -->
+          <img src="assets/ansys_1.jpg"
+               alt="Structural Analysis" loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);"/>
+        </div>
+        <!-- ✏️ Project title -->
+        <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;">Structural Analysis of Swift CLeaner</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.93rem;margin-bottom:1rem;">
+          I have analized the structural integrity of the Swift Cleaner using Ansys. The analysis focused on identifying potential stress points and optimizing the design for durability and performance. By simulating various load conditions, I was able to enhance the overall robustness of the product while ensuring it meets safety standards.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="proj-tag">Ansys</span>
+          <span class="proj-tag">SolidWorks</span>
+        </div>
+      </div>
+
+      <!-- ── Project 4 (offset) ── -->
+      <div class="project-card reveal reveal-delay-2" data-project="project-4" style="margin-top:3rem;">
+        <div class="project-img" style="aspect-ratio:16/10;background:#e7e9e6;margin-bottom:1.5rem;">
+          <!-- ✏️ Image src -->
+          <img src="assets/Front View.JPG"
+               alt="Solidworks Design Gallery" loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);"/>
+        </div>
+        <!-- ✏️ Project title -->
+        <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;">Solidworks Design Gallery</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.93rem;margin-bottom:1rem;">
+          Here is a collection of my SolidWorks designs, showcasing a range of projects from mechanical components to complex assemblies. Each design demonstrates my proficiency in 3D modeling, simulation, and product development, reflecting my commitment to engineering excellence and innovation.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="proj-tag">SolidWorks</span>
+          <span class="proj-tag">3D Modeling</span>
+          <span class="proj-tag">Simulation</span>
+        </div>
+      </div>
+
+      <!-- ── Project 5 (offset) ── -->
+      <div class="project-card reveal reveal-delay-2" data-project="project-5" style="margin-top:3rem;">
+        <div class="project-img" style="aspect-ratio:16/10;background:#e7e9e6;margin-bottom:1.5rem;">
+          <!-- ✏️ Image src -->
+          <img src="assets/Autocad 1.jpg"
+               alt="Autocad design" loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);"/>
+        </div>
+        <!-- ✏️ Project title -->
+        <h3 style="font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;">Floor planning in Autocad</h3>
+        <!-- ✏️ Description -->
+        <p style="color:#404945;line-height:1.7;font-size:0.93rem;margin-bottom:1rem;">
+          Here I have designed a floor plan for a residential building using AutoCAD in my CadCam course. The design includes detailed layouts of rooms, furniture placement, and structural elements, demonstrating my skills in architectural drafting and spatial planning. This project highlights my ability to create functional and aesthetically pleasing living spaces while adhering to design principles and client requirements.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="proj-tag">AutoCAD</span>
+          <span class="proj-tag">Architectural Drafting</span>
+          <span class="proj-tag">Spatial Planning</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Project gallery modal: click any project card to open photos -->
+<div id="project-modal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-panel">
+    <button type="button" class="modal-close" aria-label="Close project gallery">
+      <span class="material-symbols-outlined" style="font-size:22px;">close</span>
+    </button>
+    <div class="modal-header">
+      <div>
+        <span class="section-label mb-2 block">Project Photos</span>
+        <h3 id="modal-project-title" style="font-size:2rem;font-weight:800;letter-spacing:-0.025em;margin-bottom:0.75rem;">Project title</h3>
+      </div>
+      <p id="modal-project-desc" style="color:#404945;line-height:1.7;font-size:0.95rem;">Select any thumbnail to view more images. Replace these sample photo URLs in script.js when you add your project photos.</p>
+    </div>
+    <div id="modal-photo-grid" class="photo-grid"></div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+  🔧 TECHNICAL SKILLS SECTION
+  Edit: category icons, category titles, chip labels
+  Add more chips by duplicating a <span class="chip">...</span>
+================================================================ -->
+<section style="padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="text-center mb-16 reveal">
+      <!-- ✏️ Small label -->
+      <span class="section-label mb-3 block">Toolkit</span>
+      <!-- ✏️ Section title -->
+      <h2 style="font-size:2.75rem;font-weight:800;letter-spacing:-0.025em;">Technical Skills</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- ── Category 1 ── -->
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon">
+          <!-- ✏️ Icon name -->
+          <span class="material-symbols-outlined" style="color:#006d36;">code</span>
+        </div>
+        <!-- ✏️ Category title -->
+        <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:1rem;">Programming</h3>
+        <!-- ✏️ Skill chips -->
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Python</span>
+          <span class="chip">MATLAB</span>
+          <span class="chip">C</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+        </div>
+      </div>
+
+      <!-- ── Category 2 ── -->
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon">
+          <span class="material-symbols-outlined" style="color:#006d36;">design_services</span>
+        </div>
+        <!-- ✏️ Category title -->
+        <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:1rem;">Engineering Software</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">SolidWorks</span>
+          <span class="chip">CATIA</span>
+          <span class="chip">ANSYS</span>
+          <span class="chip">AutoCAD</span>
+          <span class="chip">Arena</span>
+        </div>
+      </div>
+
+      <!-- ── Category 3 ── -->
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-icon">
+          <span class="material-symbols-outlined" style="color:#006d36;">verified</span>
+        </div>
+        <!-- ✏️ Category title -->
+        <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:1rem;">Methodologies</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">Lean</span>
+          <span class="chip">Six Sigma</span>
+          <span class="chip">Kaizen</span>
+          <span class="chip">5S</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+  🔧 CONTACT SECTION
+  Edit: heading, sub-text, email address, location, form placeholders
+================================================================ -->
+<section id="contact" style="background:#f2f4f1;padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div style="background:#e1e3e0;border-radius:1.5rem;padding:clamp(2rem,5vw,5rem);"
+         class="flex flex-col md:flex-row gap-16 items-start reveal">
+
+      <!-- Left: info -->
+      <div class="md:w-5/12">
+        <!-- ✏️ Small label -->
+        <span class="section-label mb-4 block">Let's Connect</span>
+        <!-- ✏️ Contact heading — highlight word in <span style="color:#006d36;"> -->
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1.25rem;">
+          Let's build more <span style="color:#006d36;">efficient</span> systems together.
+        </h2>
+        <!-- ✏️ Contact blurb -->
+        <p style="color:#404945;line-height:1.75;font-size:0.97rem;margin-bottom:2rem;">
+          I am currently open to internship opportunities, research collaborations,
+          or just a chat about the future of IPE.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <!-- ✏️ Your email address -->
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="width:44px;height:44px;border-radius:50%;background:rgba(0,109,54,0.1);
+                         display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="material-symbols-outlined" style="color:#006d36;font-size:20px;">mail</span>
+            </span>
+            <span style="font-weight:600;font-size:0.95rem;">nafiunhasan1404@gmail.com</span>
+          </div>
+          <!-- ✏️ Your phone number -->
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="width:44px;height:44px;border-radius:50%;background:rgba(0,109,54,0.1);
+                         display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="material-symbols-outlined" style="color:#006d36;font-size:20px;">phone</span>
+            </span>
+            <span style="font-weight:600;font-size:0.95rem;">01770067990</span>
+          </div>
+          <!-- ✏️ Your location -->
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="width:44px;height:44px;border-radius:50%;background:rgba(0,109,54,0.1);
+                         display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="material-symbols-outlined" style="color:#006d36;font-size:20px;">location_on</span>
+            </span>
+            <span style="font-weight:600;font-size:0.95rem;">Sher e Bangla Hall, BUET, Dhaka</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="flex-1 w-full">
+        <div style="display:flex;flex-direction:column;gap:1.75rem;">
+          <!-- ✏️ Form field placeholders -->
+          <div><input  class="line-input" type="text"  id="f-name"  placeholder="Your Name"              autocomplete="off"/></div>
+          <div><input  class="line-input" type="email" id="f-email" placeholder="Email Address"          autocomplete="off"/></div>
+          <div><textarea class="line-input" id="f-msg" placeholder="How can we collaborate?" rows="3"
+                         style="resize:none;"></textarea></div>
+          <!-- ✏️ Submit button label -->
+          <button class="btn-primary" style="width:100%;justify-content:center;padding:18px;"
+                  onclick="sendMessage()">
+            Send Message
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ================================================================
+  🔧 FOOTER
+  Edit: brand name, copyright text, social media URLs
+================================================================ -->
+<footer style="background:#fff;padding:4rem 0 3rem;">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+    <div>
+      <!-- ✏️ Footer brand name -->
+      <div style="font-family:'Manrope',sans-serif;font-weight:800;font-size:1rem;color:#191c1b;margin-bottom:4px;">IPE Scholar</div>
+      <!-- ✏️ Copyright line -->
+      <p style="font-size:0.84rem;color:#707974;letter-spacing:0.12em;text-transform:uppercase;">© 2026 Nafiun Hasan </p>
+    </div>
+    <!-- ✏️ Social links — replace # with your actual profile URLs -->
+    <div style="display:flex;gap:2.5rem;">
+      <a href="https://www.linkedin.com/in/nafiun-hasan-738b44273/" style="font-size:0.84rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+                         color:#707974;text-decoration:none;transition:color 0.2s ease;"
+         onmouseover="this.style.color='#006d36'" onmouseout="this.style.color='#707974'">LinkedIn</a>
+      <a href="https://github.com/starkXjarvis" style="font-size:0.84rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+                         color:#707974;text-decoration:none;transition:color 0.2s ease;"
+         onmouseover="this.style.color='#006d36'" onmouseout="this.style.color='#707974'">GitHub</a>
+      <a href="https://www.researchgate.net/profile/Nafiun-Hasan?ev=hdr_xprf" style="font-size:0.84rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+                         color:#707974;text-decoration:none;transition:color 0.2s ease;"
+         onmouseover="this.style.color='#006d36'" onmouseout="this.style.color='#707974'">ResearchGate</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification (controlled by script.js) -->
+<div id="toast">✓ Message sent! I'll be in touch soon.</div>
+
+<!-- ── JavaScript — edit script.js for behaviour changes ── -->
+<script src="script.js"></script>
+</body>
+</html>
