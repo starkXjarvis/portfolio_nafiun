@@ -1,10 +1,3 @@
-/* ============================================================
-   IPE PORTFOLIO — script.js
-   All interactive behaviour lives here.
-   You should NOT need to edit this file to change content.
-   ============================================================ */
-
-/* ── Add proj-tag style dynamically (keeps CSS clean) ── */
 const tagStyle = document.createElement('style');
 tagStyle.textContent = `.proj-tag {
   font-size: 0.7rem; font-weight: 700;
@@ -13,13 +6,13 @@ tagStyle.textContent = `.proj-tag {
 }`;
 document.head.appendChild(tagStyle);
 
-/* ── Nav: add shadow on scroll ── */
+
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-/* ── Mobile hamburger menu ── */
+
 const hamburger   = document.getElementById('hamburger');
 const mobileMenu  = document.getElementById('mobile-menu');
 const h1 = document.getElementById('h1');
@@ -56,7 +49,7 @@ const observer  = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 revealEls.forEach(el => observer.observe(el));
 
-/* ── Contact form: basic validation + toast ── */
+
 function sendMessage() {
   const name  = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
